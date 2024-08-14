@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
       args:
         ENABLED_MODULES: rtmp
-    env_file: .env
+    env_file: stack.env
     ports:
       - ${HTTP_PORT}:${HTTP_PORT}
       - ${RTMP_PORT}:${RTMP_PORT}
@@ -22,6 +22,6 @@ services:
     build:
       context: ffmpeg
       dockerfile: Dockerfile
-    env_file: .env
+    env_file: stack.env
     depends_on:
       - nginx
